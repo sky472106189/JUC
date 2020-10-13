@@ -11,7 +11,7 @@
  */
 
 
-@FunctionalInterface //函数式接口：接口只有一个方法
+@FunctionalInterface //函数式接口：接口只有一个待被实现的方法
 interface Foo{
     //接口有且仅有一个方法,才能使用Lambda
 //    public void sayHello();
