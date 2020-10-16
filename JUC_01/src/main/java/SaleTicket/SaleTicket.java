@@ -4,6 +4,8 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /*
+* Episode.1
+*
 * 案例：三个售票员  卖出  30张票
 *
 * 1. 高内聚低耦合前提下，线程 操作 资源类
