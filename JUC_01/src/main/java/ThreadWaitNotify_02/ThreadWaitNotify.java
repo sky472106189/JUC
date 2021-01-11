@@ -1,4 +1,4 @@
-package ThreadWaitNotify;
+package ThreadWaitNotify_02;
 
 /**
  * Episode.2

@@ -1,4 +1,4 @@
-package SaleTicket;
+package SaleTicket_01;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
