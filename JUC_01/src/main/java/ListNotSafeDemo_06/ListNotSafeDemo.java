@@ -1,4 +1,4 @@
-package NotSafeDemo_06;
+package ListNotSafeDemo_06;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -53,7 +53,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  }
 
  */
-public class NotSafeDemo {
+public class ListNotSafeDemo {
     public static void main(String[] args) {
 //        List<String> list = new ArrayList<>();
 //        List<String> list = new Vector<>();
