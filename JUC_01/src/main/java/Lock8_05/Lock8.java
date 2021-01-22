@@ -1,7 +1,5 @@
 package Lock8_05;
 
-import com.mysql.jdbc.TimeUtil;
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -56,30 +54,10 @@ import java.util.concurrent.TimeUnit;
  还是不同的实例对象的静态同步方法之间，只要它们是同一个类的实例对象
  */
 
-class Phone{
-    public static synchronized void sendEmail() throws Exception{
-        //暂停一会儿线程 （同Thread.sleep(400)）
-        try{
-            //此方法更精确，能精确到更小的秒单位
-            TimeUnit.SECONDS.sleep(4);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
-        System.out.println("------sendEmail!");
-    }
-    public synchronized void sendSMS() throws Exception{
-        System.out.println("------sendSMS");
-    }
-
-    public void hello(){
-        System.out.println("-----hello!");
-    }
-
-}
 public class Lock8 {
     public static void main(String[] args) throws InterruptedException{
         Phone phone = new Phone();
-        Phone phone2 = new Phone();
+//        Phone phone2 = new Phone();
 
         new Thread(()->{
             try {
@@ -93,8 +71,8 @@ public class Lock8 {
 
         new Thread(()->{
             try {
-//                phone.sendSMS();
-                phone.hello();
+                phone.sendSMS();
+//                phone.hello();
 //                phone2.sendSMS();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -102,4 +80,25 @@ public class Lock8 {
         },"B").start();
 
     }
+}
+
+class Phone{
+    public static synchronized void sendEmail() throws Exception{
+        //暂停一会儿线程 （同Thread.sleep(400)）
+        try{
+            //此方法更精确，能精确到更小的秒单位
+            TimeUnit.SECONDS.sleep(4);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        System.out.println("------sendEmail!");
+    }
+    public static synchronized void sendSMS() throws Exception{
+        System.out.println("------sendSMS");
+    }
+
+    public void hello(){
+        System.out.println("-----hello!");
+    }
+
 }
