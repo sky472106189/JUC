@@ -22,8 +22,9 @@ class MyData{
 
 /*
 * 验证volatile的可见性
+*  结论:volatile可以保证可见性，及时通知其他线程，主物理内存的值已经被修改。
 * */
-public class VolatileDemo {
+public class VolatileVisibilityDemo {
     public static void main(String[] args) {
         MyData data = new MyData();
         new Thread(()->{
@@ -34,8 +35,8 @@ public class VolatileDemo {
         },"A").start();
 
         while(data.number==0){
-            //main线程等待循环，直到number!=0
-            //number数据没用volatile修饰，是拿不到更新后的数据的
+            //main线程无限循环，直到number!=0
+            //如果number数据没用volatile修饰，会一直循环下去
         }
         System.out.println(Thread.currentThread().getName()+"\t"+data.number);
 
