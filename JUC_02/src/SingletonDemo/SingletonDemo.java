@@ -2,6 +2,7 @@ package SingletonDemo;
 
 /*
 * volatile禁止指令重排
+*   单例模式演示
 * */
 public class SingletonDemo {
 //    private static  SingletonDemo instance = null;

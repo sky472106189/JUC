@@ -47,7 +47,7 @@ public class VolatileAtomicDemo {
             Thread.yield();//当前线程暂停,回到就绪状态.注意:在回到就绪状态之后,有可能还会再次抢到
         }
 
-        System.out.println(Thread.currentThread().getName() + "\t 最终值: " + data1.number);//理想值是20000
+        System.out.println(Thread.currentThread().getName() + "\t 最终值: " + data1.number);//理想值是20000,但实际上不是
         System.out.println(Thread.currentThread().getName() + "\t 保证原子性后最终值: " + data1.atomicInteger);
 
     }
