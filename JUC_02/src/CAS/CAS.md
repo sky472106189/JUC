@@ -62,13 +62,13 @@ public final int getAndAddInt(Object var1, long var2, int var4) {
 >
 > ​	分析源码：
 >
-> ​	var5是通过var1 var2找出主内存中真实的值，用该对象的值与var5比较：
+> ​	var5是通过var1的内存地址偏移量为var2后找出主内存中真实的值，用该对象的值与var5比较：
 >
 > - 如果相同，更新var5 + va4 并且返回true
 > - 如果不同，继续取值然后再比较，直到更新完成
 
 - var5 = getIntValatile(var1,var2)
-  - 就是得到var1对象对应的内存地址var2的值
+  - 就是得到var1对象的内存地址偏移量为var2后的值
 
 
 
